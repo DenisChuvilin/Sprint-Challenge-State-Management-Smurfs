@@ -1,10 +1,9 @@
-import {FETCH_SMURFS_START,FETCH_SMURFS_SUCCESS,FETCH_SMURFS_FAIL, POST_SMURF_START,POST_SMURF_SUCCESS,POST_SMURF_FAIL} from "../actions/getSmurf";
+import {FETCH_SMURFS_START,FETCH_SMURFS_SUCCESS,FETCH_SMURFS_FAIL, } from "../actions/getSmurf";
 
+import {POST_SMURF_START,POST_SMURF_SUCCESS,POST_SMURF_FAIL} from '../actions/postSmurf'
 
 const initialState = {
-    currentVillage: {
-        
-    }
+    currentVillage: []
     ,
 isFetching: false, 
 fetchError: '',
@@ -13,7 +12,7 @@ postError: ''
 }
 
 
-export const smurfReducerGet = (state = initialState, action) => {
+export const smurfReducer = (state = initialState, action) => {
     switch (action.type){
         case FETCH_SMURFS_START:
             return {
@@ -37,12 +36,10 @@ export const smurfReducerGet = (state = initialState, action) => {
                 }
             case POST_SMURF_SUCCESS:
                 return {
-                    ...state, currentVillage: [...currentVillage, action.payload],
+                    ...state, currentVillage: [...state.currentVillage, action.payload],
                     isPosting:false,
                     postError: ''
                 }
       default: return state
     }
 }
-
-export const smurfReducer

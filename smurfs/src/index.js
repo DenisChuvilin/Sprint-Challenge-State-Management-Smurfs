@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import {smurfReducerGet} from './store/reducers/smurfReducer';
+import {smurfReducer} from './store/reducers/smurfReducer';
 import logger from 'redux-logger';
 
 import './index.css';
@@ -13,7 +13,7 @@ import App from './App';
 // redux setup
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(smurfReducerGet, composeEnhancers(applyMiddleware(thunk, logger)));
+const store = createStore(smurfReducer, composeEnhancers(applyMiddleware(thunk, logger)));
 
 ReactDOM.render(
   <Provider store={store}>

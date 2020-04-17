@@ -22,7 +22,7 @@ const SmurfForm = ({getSmurf}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    postSmurf(e);
+    postSmurf(formState);
     setFormState({
       name: '',
       age: '',
