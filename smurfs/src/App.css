@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.form{
+  width:10%;
+  align-items: center;
+
+  border: .5em solid black;
+  border-radius: 3%;
+
+  padding: 5%;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.error{
+  color:firebrick
+}
